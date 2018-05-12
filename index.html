@@ -341,8 +341,7 @@
 
       
         
-          
-            <p>首先给了ip段，202.1.8.50-60</p>
+          <p>首先给了ip段，202.1.8.50-60</p>
 <p>我们能用nmap扫到的是50,52,60</p>
 <p>202.1.8.50开放了web服务，ftp服务，还开了3389</p>
 <p>版本是windows sever2003 sp2 </p>
@@ -354,28 +353,13 @@
 <p>还读到了flag.php，成功拿到第一个flag！</p>
 <p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获.PNG" alt="flag4"></p>
 <p>之后思路错了，开始爆3389和ftp，无果。</p>
-<p>比赛还剩1个小时，第五，差一名进国赛，数据赛大佬已经AK，个人赛也解了一题了。</p>
-<p>后面回到最初的tips.php给的提示，应该是和snmp服务有关啊。</p>
-<p>查看了很多资料，看到一篇文章：<a href="http://www.freebuf.com/column/144144.html" target="_blank" rel="noopener">http://www.freebuf.com/column/144144.html</a></p>
-<p>成功用字典爆破出了Community String 是admin.</p>
-<p>进而使用msf得到202.1.8.50的一些系统信息，</p>
-<p>发现有四个用户:</p>
-<p>Adminisitrator,guest,libai,SUPPORT_388945a0</p>
-<p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获3.PNG" alt="message"></p>
-<p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获4.PNG" alt="message"></p>
-<p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获5.PNG" alt="massage"></p>
-<p>推测libai 和 SUPPORT_388945a0 用户有点可疑，</p>
-<p>最后用弱密码通过libai帐号远程登录到了主机上。</p>
-<p>数据库和根目录各一个flag，做到这里挺开心的，可以去国赛了~~~</p>
-<p>也算没有辜负队友吧</p>
-<p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获1.PNG" alt="message"></p>
-<p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获2.PNG" alt="flag"></p>
-<p>因为之前思路偏了，浪费了很多时间</p>
-<p>202.1.8.52的所有服务扫出来都是关闭的</p>
-<p>202.1.8.60有开445等端口，看了农林大佬的wp，是用msf的samba模块获得shell,之后再通过代理，进行内网的渗透。</p>
-<p>有点可惜了。过程有惊无险，不懂的还是很多，继续努力吧！</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/12/铁人三项第七赛区企业赛wp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
