@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://1292586222.github.io/2018/11/22/bestphp-s-revenge/4.PNG">
 <meta property="og:image" content="https://1292586222.github.io/2018/11/22/bestphp-s-revenge/5.png">
 <meta property="og:image" content="https://1292586222.github.io/2018/11/22/bestphp-s-revenge/6.png">
-<meta property="og:updated_time" content="2018-11-22T12:28:49.624Z">
+<meta property="og:updated_time" content="2018-11-22T12:38:05.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bestphp&#39;s revenge">
 <meta name="twitter:description" content="LCTF2018——bestphp’s revenge">
@@ -374,7 +374,10 @@
         <h1 id="LCTF2018——bestphp’s-revenge"><a href="#LCTF2018——bestphp’s-revenge" class="headerlink" title="LCTF2018——bestphp’s revenge"></a>LCTF2018——bestphp’s revenge</h1><a id="more"></a>
 <h3 id="源码"><a href="#源码" class="headerlink" title="源码:"></a>源码:</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//index.php</span></span><br><span class="line">highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">$b = <span class="string">'implode'</span>;</span><br><span class="line">call_user_func($_GET[f],$_POST);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[name]))&#123;</span><br><span class="line">    $_SESSION[name] = $_GET[name];</span><br><span class="line">&#125;</span><br><span class="line">var_dump($_SESSION);</span><br><span class="line">$a = <span class="keyword">array</span>(reset($_SESSION),<span class="string">'welcome_to_the_lctf2018'</span>);</span><br><span class="line">call_user_func($b,$a);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//flag.php</span></span><br><span class="line">session_start(); </span><br><span class="line"><span class="keyword">echo</span> <span class="string">'only localhost can get flag!&lt;br&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> $_SERVER[<span class="string">"REMOTE_ADDR"</span>];</span><br><span class="line"> $flag = <span class="string">'LCTF&#123;*************************&#125;'</span>; </span><br><span class="line"> <span class="keyword">if</span>($_SERVER[<span class="string">"REMOTE_ADDR"</span>]===<span class="string">"127.0.0.1"</span>)</span><br><span class="line"> 	&#123; $_SESSION[<span class="string">'flag'</span>] = $flag; &#125; </span><br><span class="line"> var_dump($_SESSION);</span><br><span class="line"> <span class="comment">//only localhost can get flag!</span></span><br></pre></td></tr></table></figure>
-<p>###思路是通过SSRF，本地访问flag.php从而满足<code>$_SERVER[&quot;REMOTE_ADDR&quot;]===&quot;127.0.0.1&quot;</code>得到flag</p>
+<p>###思路</p>
+<ul>
+<li>通过SSRF，本地访问flag.php从而满足<code>$_SERVER[&quot;REMOTE_ADDR&quot;]===&quot;127.0.0.1&quot;</code>得到flag</li>
+</ul>
 <h3 id="反序列化机制"><a href="#反序列化机制" class="headerlink" title="反序列化机制"></a>反序列化机制</h3><ul>
 <li>当序列化引擎与反序列化引擎不一致时，会发生一些问题</li>
 <li>不同引擎的存储方式：<ul>
@@ -543,7 +546,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -554,7 +557,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -565,7 +568,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
