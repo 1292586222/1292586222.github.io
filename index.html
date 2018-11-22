@@ -843,7 +843,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://1292586222.github.io/2018/05/12/铁人三项第七赛区企业赛wp/">
+    <link itemprop="mainEntityOfPage" href="https://1292586222.github.io/2018/05/05/ISCC2018/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="爱鸭鸭">
@@ -862,7 +862,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/12/铁人三项第七赛区企业赛wp/" itemprop="url">铁人三项第七赛区企业赛wp</a></h1>
+                <a class="post-title-link" href="/2018/05/05/ISCC2018/" itemprop="url">ISCC2018</a></h1>
         
 
         <div class="post-meta">
@@ -874,8 +874,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T12:12:30+08:00">
-                2018-05-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T17:05:33+08:00">
+                2018-05-05
               </time>
             
 
@@ -913,21 +913,14 @@
 
       
         
-          <p>首先给了ip段，202.1.8.50-60</p>
-<p>我们能用nmap扫到的是50,52,60</p>
-<p>202.1.8.50开放了web服务，ftp服务，还开了3389</p>
-<p>版本是windows sever2003 sp2 </p>
-<p>先访问80端口，撸猫大战- -</p>
-<p>源代码里给的提示是Tips.php</p>
-<p>刚看完队友已经文件包含读到Tips.php的源码，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内容是:Have you ever heard of SNMP informaiton treasure?</span><br></pre></td></tr></table></figure>
-<p>猜测应该是和snmp服务有关。</p>
-<p>还读到了flag.php，成功拿到第一个flag！</p>
-<p><img src="/2018/05/12/铁人三项第七赛区企业赛wp/捕获.PNG" alt="flag4"></p>
-<p>之后思路错了，开始爆3389和ftp，无果。</p>
+          <p>水了一波ISCC</p>
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h2 id="1-what-is-that"><a href="#1-what-is-that" class="headerlink" title="1.what is that?"></a>1.what is that?</h2><p>解压文件，得到一张图片<br>图片给了一个hint，手指往下指<br>猜想应该是图片下面的flag被盖住了，我是用winhex改宽高的方法，让下面的内容显示出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-(固定）八个字节89 50 4E 47 0D 0A 1A 0A为png的文件头-</span><br><span class="line">-(固定）四个字节00 00 00 0D（即为十进制的13）代表数据块的长度为13-</span><br><span class="line">-(固定）四个字节49 48 44 52（即为ASCII码的IHDR）是文件头数据块的标示-</span><br><span class="line">接下来的8个字节，前4个为宽，后4个为高</span><br></pre></td></tr></table></figure>
+<p>将高改大一点就能看见flag了。</p>
+<p><img src="/2018/05/05/ISCC2018/FLAG.PNG" alt="flag"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/12/铁人三项第七赛区企业赛wp/#more" rel="contents">
+            <a class="btn" href="/2018/05/05/ISCC2018/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1019,7 +1012,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1030,7 +1023,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1041,7 +1034,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
